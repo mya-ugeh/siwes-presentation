@@ -71,14 +71,14 @@ with st.form('my_form', clear_on_submit=True):
                     st.write("Predicted Price is :", prediction)
             with tab2:
                 st.subheader('modelling Interpretation')
-                st.write(f"Profit = {modelling.intercept_.round(2)} + {modelling.coef_[0].round(2)} R&D Spend + {modelling.coef_[1].round(2)} Administration + {modelling.coef_[2].round(2)} Marketing Spend")
+                st.write(f"Profit = {modelling.intercept_.round(2)} + {modelling.coef_[0].round(2)}(Avg. Area Income)+ {modelling.coef_[1].round(2)} (Avg. Area House Age) + {modelling.coef_[2].round(2)} (Avg. Area Number of Rooms)")
 
                 st.markdown("<br>", unsafe_allow_html= True)
 
                 st.markdown(f"- The expected Profit for a startup is {modelling.intercept_}")
 
-                st.markdown(f"- For every additional 1 dollar spent on Avg. Area Income, the expected profit is expected to increase by ${modelling.coef_[0].round(2)}  ")
+                st.markdown(f"- For every additional 1 dollar spent on Avg. Area Income, the expected profit is expected to increase by ${modelling.coef_[0].round(2)}")
 
-                st.markdown(f"- For every additional 1 dollar spent on Avg. Area House Age, the expected profit is expected to decrease by ${modelling.coef_[1].round(2)}  ")
+                st.markdown(f"- For every additional 1 dollar spent on Avg. Area House Age, the expected profit is expected to decrease by ${modelling.coef_[1].round(2)}")
 
                 st.markdown(f"- For every additional 1 dollar spent on Avg. Area Number of Rooms, the expected profit is expected to increase by ${modelling.coef_[2].round(2)}")
